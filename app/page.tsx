@@ -6,8 +6,7 @@ export default function Home() {
   return (
     <div className="bg-white text-gray-800">
       {/* HERO SECTION */}
-      <section className="relative bg-gradient-to-b from-white via-orange-100 to-orange-400 pt-10 pb-32 px-4 overflow-hidden">
-        {/* Container Utama - Disamakan max-w-7xl dengan Navbar agar sejajar */}
+      <section className="relative bg-gradient-to-b from-white via-yellow-100 to-yellow-400 pt-10 pb-32 px-4 overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
           
           <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
@@ -51,7 +50,6 @@ export default function Home() {
             {/* KOLOM KANAN - Gambar */}
             <div className="relative order-1 md:order-2">
               <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white transform hover:rotate-2 transition-transform duration-500">
-                {/* Pastikan file hero.jpg ada di folder public */}
                 <div className="aspect-[4/3] relative">
                     <img 
                       src="/jumbotron.png" 
@@ -60,7 +58,6 @@ export default function Home() {
                     />
                 </div>
                 
-                {/* Overlay gradient halus di bawah gambar agar terlihat menyatu */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
               </div>
 
@@ -73,58 +70,84 @@ export default function Home() {
         </div>
       </section>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250"><path fill="#fb923c" fill-opacity="1" d="M0,128L15,138.7C30,149,60,171,90,165.3C120,160,150,128,180,96C210,64,240,32,270,64C300,96,330,192,360,213.3C390,235,420,181,450,170.7C480,160,510,192,540,170.7C570,149,600,75,630,85.3C660,96,690,192,720,229.3C750,267,780,245,810,202.7C840,160,870,96,900,101.3C930,107,960,181,990,197.3C1020,213,1050,171,1080,133.3C1110,96,1140,64,1170,64C1200,64,1230,96,1260,112C1290,128,1320,128,1350,128C1380,128,1410,128,1425,128L1440,128L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 250"><path fill="#facc15" fill-opacity="1" d="M0,128L15,138.7C30,149,60,171,90,165.3C120,160,150,128,180,96C210,64,240,32,270,64C300,96,330,192,360,213.3C390,235,420,181,450,170.7C480,160,510,192,540,170.7C570,149,600,75,630,85.3C660,96,690,192,720,229.3C750,267,780,245,810,202.7C840,160,870,96,900,101.3C930,107,960,181,990,197.3C1020,213,1050,171,1080,133.3C1110,96,1140,64,1170,64C1200,64,1230,96,1260,112C1290,128,1320,128,1350,128C1380,128,1410,128,1425,128L1440,128L1440,0L1425,0C1410,0,1380,0,1350,0C1320,0,1290,0,1260,0C1230,0,1200,0,1170,0C1140,0,1110,0,1080,0C1050,0,1020,0,990,0C960,0,930,0,900,0C870,0,840,0,810,0C780,0,750,0,720,0C690,0,660,0,630,0C600,0,570,0,540,0C510,0,480,0,450,0C420,0,390,0,360,0C330,0,300,0,270,0C240,0,210,0,180,0C150,0,120,0,90,0C60,0,30,0,15,0L0,0Z"></path></svg>
 
       {/* TENTANG KAMI */}
-      <section id="tentang" className="py-24 px-6 max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-16 items-center">
-          <div className="order-2 md:order-1">
-            <div className="inline-block mb-4 px-4 py-1 bg-[#ffde00] rounded-full">
-              <span className="text-[#e41526] font-bold text-xs tracking-wide">TENTANG KAMI</span>
-            </div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#00a339] mb-6 leading-tight">
-              Kenapa Harus<br />
-              <span className="text-[#e41526]">Modies?</span>
-            </h2>
-            <p className="text-lg leading-relaxed text-gray-700 mb-6">
-              Di Warmindo Modies, kami tidak hanya menyajikan mie. <span className="font-bold text-[#00a339]">Kami meracik kenangan</span>. 
-              Dengan bumbu rahasia dan teknik memasak yang pas, setiap porsi mie goreng 
-              kami memiliki cita rasa yang legendaris.
-            </p>
-            <div className="grid grid-cols-2 gap-4 mb-8">
-              {[
-                { icon: '🔥', text: 'Bumbu Rahasia' },
-                { icon: '👨‍🍳', text: 'Chef Berpengalaman' },
-                { icon: '✅', text: 'Bahan Berkualitas' },
-                { icon: '⚡', text: 'Pelayanan Cepat' }
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-3 bg-green-50 p-4 rounded-xl">
-                  <span className="text-2xl">{item.icon}</span>
-                  <span className="font-semibold text-gray-800">{item.text}</span>
-                </div>
-              ))}
-            </div>
-            <div className="h-1 w-24 bg-gradient-to-r from-[#f39000] to-[#ffde00] rounded-full"></div>
-          </div>
+      <section id="tentang" className="relative bg-gradient-to-b from-white to-orange-50 py-24 px-4 overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10">
           
-          <div className="order-1 md:order-2 relative">
-            <div className="relative bg-gradient-to-br from-[#ffde00] to-[#f39000] p-2 rounded-3xl rotate-3 shadow-2xl hover:rotate-0 transition-transform duration-300">
-              <div className="bg-white p-1 rounded-2xl">
-                <div className="bg-gray-200 aspect-[4/3] rounded-xl flex items-center justify-center text-gray-400 overflow-hidden">
-                  <div className="text-center p-8">
-                    <span className="text-6xl mb-4 block">🍜</span>
-                    <span className="font-bold text-lg">[Foto Suasana Warung]</span>
-                  </div>
+          <div className="grid md:grid-cols-5 gap-12 lg:gap-20 items-center">
+            {/* KOLOM KIRI - Gambar */}
+            <div className="relative order-2 md:order-1 md:col-span-2 h-[600px] md:h-[700px]">
+              {/* Gambar 1 - Kiri Atas */}
+              <div className="absolute top-0 left-0 w-[50%] z-20 transform hover:scale-105 transition-transform duration-500">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                  <img 
+                    src="/tempat/1.webp" 
+                    alt="Warmindo Modies - Suasana 1" 
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
                 </div>
+                <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#ffde00] rounded-full opacity-20 blur-2xl -z-10"></div>
+              </div>
+
+              {/* Gambar 2 - Kanan Tengah (Overlap) */}
+              <div className="absolute top-[120px] right-0 w-[40%] z-30 transform hover:scale-105 transition-transform duration-500">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                  <img 
+                    src="/tempat/2.webp" 
+                    alt="Warmindo Modies - Suasana 2" 
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
+                </div>
+                <div className="absolute -top-4 -right-4 w-24 h-24 bg-[#e41526] rounded-full opacity-20 blur-2xl -z-10"></div>
+              </div>
+
+              {/* Gambar 3 - Kiri Bawah */}
+              <div className="absolute bottom-0 left-0 w-[50%] z-20 transform hover:scale-105 transition-transform duration-500">
+                <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
+                  <img 
+                    src="/tempat/3.webp" 
+                    alt="Warmindo Modies - Suasana 3" 
+                    className="w-full h-64 md:h-80 object-cover"
+                  />
+                </div>
+                <div className="absolute -bottom-4 -right-4 w-24 h-24 bg-[#00a339] rounded-full opacity-20 blur-2xl -z-10"></div>
               </div>
             </div>
-            {/* Decorative badge */}
-            <div className="absolute -bottom-6 -right-6 bg-[#e41526] text-white p-6 rounded-2xl shadow-xl rotate-12 hover:rotate-0 transition-transform">
-              <div className="text-center">
-                <div className="text-3xl font-bold">5+</div>
-                <div className="text-xs">Tahun Pengalaman</div>
+
+            {/* KOLOM KANAN - Konten Teks */}
+            <div className="space-y-6 text-center md:text-left order-1 md:order-2 md:col-span-3">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-[#ffde00]/20 border border-[#ffde00] rounded-full">
+                <span className="text-[#e41526] font-bold text-xs md:text-sm tracking-wide">TENTANG KAMI</span>
               </div>
+              
+              {/* Heading */}
+              <h2 className="font-extrabold text-black text-4xl md:text-5xl lg:text-6xl leading-tight">
+                Kenapa Harus<br />
+                <span className="text-black">Modies?</span>
+              </h2>
+              
+              {/* Deskripsi */}
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed mx-auto md:mx-0">
+                Warmindo Modies berdiri sejak tahun 2024 sebagai tempat makan sederhana yang dekat dengan keseharian mahasiswa. Kami menyajikan beragam menu favorit seperti mie, nasi, dan camilan yang diracik dengan rasa pas, harga bersahabat, dan porsi mengenyangkan. Warmindo Modies bukan sekadar tempat makan, tetapi juga ruang nyaman untuk berkumpul, mengerjakan tugas, dan melepas penat.
+              </p>
+              
+              {/* Link Button */}
+              <div className="pt-4">
+                <Link 
+                  href="/tentang" 
+                  className="inline-block bg-[#e41526] text-white px-8 py-3 rounded-full font-bold text-base hover:bg-[#ff7f08] hover:scale-105 transition-all shadow-lg"
+                >
+                  Selengkapnya
+                </Link>
+              </div>
+              
+              {/* Ala-ala Garis */}
+              <div className="h-1 w-24 bg-gradient-to-r from-[#f39000] to-[#ffde00] rounded-full mx-auto md:mx-0"></div>
             </div>
+
           </div>
         </div>
       </section>
