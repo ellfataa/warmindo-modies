@@ -58,8 +58,8 @@ const Navbar = () => {
 
   const navLinks = [
     { href: '/', label: 'Beranda'},
+    { href: '/tentang', label: 'Tentang Kami' },
     { href: '/menu', label: 'Menu'},
-    { href: '/tentang', label: 'Tentang' },
     { href: '/kontak', label: 'Kontak' },
   ];
 

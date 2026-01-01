@@ -36,21 +36,21 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link href="/menu" className="text-white/90 hover:text-[#ffde00] hover:translate-x-1 transition-all inline-flex items-center group">
-                  <span className="w-1.5 h-1.5 bg-white/50 rounded-full mr-3 group-hover:bg-[#ffde00] group-hover:scale-125 transition-all"></span>
-                  Menu Populer
-                </Link>
-              </li>
-              <li>
                 <Link href="/tentang" className="text-white/90 hover:text-[#ffde00] hover:translate-x-1 transition-all inline-flex items-center group">
                   <span className="w-1.5 h-1.5 bg-white/50 rounded-full mr-3 group-hover:bg-[#ffde00] group-hover:scale-125 transition-all"></span>
                   Tentang Kami
                 </Link>
               </li>
               <li>
+                <Link href="/menu" className="text-white/90 hover:text-[#ffde00] hover:translate-x-1 transition-all inline-flex items-center group">
+                  <span className="w-1.5 h-1.5 bg-white/50 rounded-full mr-3 group-hover:bg-[#ffde00] group-hover:scale-125 transition-all"></span>
+                  Menu
+                </Link>
+              </li>
+              <li>
                 <Link href="/kontak" className="text-white/90 hover:text-[#ffde00] hover:translate-x-1 transition-all inline-flex items-center group">
                   <span className="w-1.5 h-1.5 bg-white/50 rounded-full mr-3 group-hover:bg-[#ffde00] group-hover:scale-125 transition-all"></span>
-                  Hubungi Kami
+                  Kontak
                 </Link>
               </li>
             </ul>
