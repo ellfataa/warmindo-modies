@@ -2,12 +2,15 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter, usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isTop, setIsTop] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,6 +31,31 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [lastScrollY]);
 
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Jika link memiliki hash (#) dan kita sudah di halaman home
+    if (href.includes('#') && pathname === '/') {
+      e.preventDefault();
+      const targetId = href.split('#')[1];
+      const targetElement = document.getElementById(targetId);
+      
+      if (targetElement) {
+        setIsMobileMenuOpen(false);
+        targetElement.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    } else if (href === '/' && pathname === '/') {
+      // Jika klik "Beranda" saat sudah di home, scroll ke top
+      e.preventDefault();
+      setIsMobileMenuOpen(false);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      // Untuk navigasi ke halaman lain
+      setIsMobileMenuOpen(false);
+    }
+  };
+
   const navLinks = [
     { href: '/', label: 'Beranda'},
     { href: '/menu', label: 'Menu'},
@@ -37,14 +65,12 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Floating Navbar Container */}
       <div 
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isVisible ? 'translate-y-0' : '-translate-y-full'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 pt-6">
-          {/* Floating Nav */}
           <nav 
             className={`
               mx-auto max-w-fit
@@ -58,7 +84,11 @@ const Navbar = () => {
           >
             <div className="flex items-center gap-6 md:gap-8">
               
-              <Link href="/" className="group flex items-center gap-3 flex-shrink-0">
+              <Link 
+                href="/" 
+                className="group flex items-center gap-3 flex-shrink-0"
+                onClick={(e) => handleSmoothScroll(e, '/')}
+              >
                 {/* Logo Warmindo */}
                 <div className="relative group-hover:scale-110 transition-transform duration-300">
                   <Image 
@@ -87,6 +117,7 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="group relative px-4 py-2 font-semibold text-sm text-gray-600 hover:text-warmindo-red transition-all duration-300 rounded-full hover:bg-gray-50"
                   >
                     <span className="flex items-center gap-2">
@@ -138,7 +169,7 @@ const Navbar = () => {
                   <Link
                     key={link.href}
                     href={link.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    onClick={(e) => handleSmoothScroll(e, link.href)}
                     className="group flex items-center gap-3 px-4 py-3 font-semibold text-sm text-gray-600 hover:text-warmindo-red hover:bg-gray-50 rounded-2xl transition-all duration-300"
                     style={{ 
                       animationDelay: `${index * 50}ms`,
@@ -157,7 +188,6 @@ const Navbar = () => {
       {/* Spacer untuk konten di bawah navbar */}
       <div className="h-24"></div>
 
-      {/* Animation keyframes */}
       <style jsx>{`
         @keyframes slideIn {
           from {
